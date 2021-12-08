@@ -13,7 +13,7 @@ resource "proxmox_vm_qemu" "proxmox_ressources" {
   network {
     model  = each.value.bridge_model
     bridge = each.value.bridge_int
-    tag    = 10
+    tag    = each.value.bridge_tag
   }
 
   disk {

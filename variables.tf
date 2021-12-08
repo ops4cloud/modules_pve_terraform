@@ -10,6 +10,7 @@ variable "vms" {
       ip_gateway   = "10.10.10.254"
       bridge_int   = "vmbr0"
       bridge_model = "virtio"
+      bridge_tag   = 10
       os_type      = "cloud-init"
       description  = "Default VM"
       scsihw       = "virtio-scsi-pci"
@@ -28,6 +29,7 @@ variable "vms" {
     ip_gateway   = string
     bridge_int   = string
     bridge_model = string
+    bridge_tag   = number
     os_type      = string
     description  = string
     scsihw       = string
