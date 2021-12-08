@@ -1,5 +1,23 @@
 variable "vms" {
-  default = {}
+  default = { 
+    default_vm = {
+      memory       = "2048"
+      cpu          = "2"
+      cpu_type     = "kvm64"
+      sockets      = "2"
+      clone_base   = "centos-7-template"
+      ip_addr      = "10.10.10.50"
+      ip_gateway   = "10.10.10.254"
+      bridge_int   = "vmbr0"
+      bridge_model = "virtio"
+      os_type      = "cloud-init"
+      description  = "Default VM"
+      scsihw       = "virtio-scsi-pci"
+      bootdisk     = "scsi0"
+      nameserver   = "10.10.10.254"
+      searchdomain = "ops4cloud.fr"
+    }
+  }
   type = map(object({
     memory       = string
     cpu          = string
@@ -37,7 +55,7 @@ variable "storage_name" {
 
 variable "storage_size" {
   type = string
-  default = "50"
+  default = "50G"
 }
 
 variable "ssh_key" {
