@@ -10,6 +10,7 @@ resource "proxmox_vm_qemu" "proxmox_ressources" {
   memory      = each.value.memory
   scsihw      = each.value.scsihw
   bootdisk    = each.value.bootdisk
+  onboot      = each.value.onboot
   network {
     model  = each.value.bridge_model
     bridge = each.value.bridge_int
