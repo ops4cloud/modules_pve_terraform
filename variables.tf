@@ -17,6 +17,7 @@ variable "vms" {
       bootdisk     = "scsi0"
       nameserver   = "10.10.10.254"
       searchdomain = "ops4cloud.fr"
+      onboot       = false
     }
   }
   type = map(object({
@@ -36,6 +37,7 @@ variable "vms" {
     bootdisk     = string
     nameserver   = string
     searchdomain = string
+    onboot       = bool
   }))
 }
 
@@ -100,4 +102,9 @@ variable "pve_tls_insecure" {
 variable "pve_host_timeout" {
   type = string
   default = "500"
+}
+
+variable "onboot" {
+  type = bool
+  default = false
 }
