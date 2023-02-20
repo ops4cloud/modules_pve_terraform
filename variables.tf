@@ -18,6 +18,7 @@ variable "vms" {
       nameserver   = "10.10.10.254"
       searchdomain = "ops4cloud.fr"
       onboot       = false
+      agent        = 1
     }
   }
   type = map(object({
@@ -107,4 +108,9 @@ variable "pve_host_timeout" {
 variable "onboot" {
   type = bool
   default = false
+}
+
+variable "agent" {
+  type = number
+  default = 1
 }
