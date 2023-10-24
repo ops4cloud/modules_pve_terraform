@@ -32,6 +32,8 @@ module "modules_pve_terraform" {
       bootdisk     = "scsi0"
       nameserver   = "10.10.10.2"
       searchdomain = "example.com"
+      onboot       = true
+      agent        = 1
     }
     zabbix = {
       memory       = "2048"
@@ -50,6 +52,8 @@ module "modules_pve_terraform" {
       bootdisk     = "scsi0"
       nameserver   = "10.10.10.2"
       searchdomain = "example.com"
+      onboot       = true
+      agent        = 1
     }
   }
 }
