@@ -39,6 +39,7 @@ variable "vms" {
     nameserver   = string
     searchdomain = string
     onboot       = bool
+    agent        = number
   }))
 }
 
